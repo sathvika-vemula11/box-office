@@ -1,6 +1,6 @@
 {
-  "extends": ["eslint:recommended", "airbnb", "prettier"],
-  "plugins": ["react-hooks"],
+  "extends": "eslint:recommended", //["airbnb", "prettier"]
+  "plugins": ["react", "react-hooks"],
   "env": {
     "browser": true
   },
@@ -24,6 +24,8 @@
     "react-hooks/exhaustive-deps": "warn",
     "arrow-body-style": [0],
     "prefer-arrow-callback": [0],
-    "react/function-component-definition": "off"
+    "react/function-component-definition": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   }
 }
