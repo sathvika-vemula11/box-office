@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import ActorGrid from '../components/actors/ActorGrid';
 import MainPage from '../components/MainPage';
+import ShowsGrid from '../components/shows/ShowsGrid';
 import { apiGet } from '../misc/config';
 
 function Home() {
@@ -7,8 +9,6 @@ function Home() {
   const [results, setResults] = useState(null);
   const [searchOption, setSearchOptions] = useState('shows');
   const isShows = searchOption === 'shows';
-
-  console.log(searchOption);
 
   const onInputChange = ev => {
     setInput(ev.target.value);
@@ -35,15 +35,14 @@ function Home() {
       return <div>No Results Found</div>;
     }
     if (results && results.length > 0) {
-      return results[0].show
-        ? results.map(item => <div key={item.show.id}>{item.show.name}</div>)
-        : results.map(item => (
-            <div key={item.person.id}>{item.person.name}</div>
-          ));
+      return results[0].show ? (
+        <ShowsGrid data={results} />
+      ) : (
+        <ActorGrid data={results} />
+      );
     }
     return null;
   };
-
   return (
     <MainPage>
       <input
