@@ -44,7 +44,8 @@ function Home() {
     return null;
   };
   return (
-    <MainPage>
+    <div>
+      <MainPage />
       <input
         type="text"
         placeholder="Search For Something"
@@ -78,7 +79,7 @@ function Home() {
         Search
       </button>
       {renderResults()}
-    </MainPage>
+    </div>
   );
 }
 
