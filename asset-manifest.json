@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/box-office/static/js/main.832f33c4.js",
+    "service-worker.js": "/box-office/service-worker.js",
+    "index.html": "/box-office/index.html",
+    "main.832f33c4.js.map": "/box-office/static/js/main.832f33c4.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.832f33c4.js"
+  ]
+}
