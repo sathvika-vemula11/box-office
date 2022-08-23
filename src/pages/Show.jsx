@@ -8,7 +8,8 @@ import ShowMainData from '../components/shows/ShowMainData';
 import { apiGet } from '../misc/config';
 import { InfoBlock, ShowPageWrapper } from './Show.Styled';
 
-const reducer = (prevState, action) => {
+// eslint-disable-next-line func-names
+const reducer = function (prevState, action) {
   switch (action.type) {
     case 'FETCH_SUCCESS': {
       return { isLoading: false, error: null, show: action.show };

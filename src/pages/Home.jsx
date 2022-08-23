@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import { apiGet } from '../misc/config';
+import {
+  SearchInput,
+  SearchButtonWrapper,
+  RadioInputsWrapper,
+} from './Home.styled';
 import ActorGrid from '../components/actors/ActorGrid';
 import MainPage from '../components/MainPage';
 import ShowsGrid from '../components/shows/ShowsGrid';
-import { apiGet } from '../misc/config';
 
 function Home() {
   const [input, setInput] = useState('');
@@ -46,14 +51,14 @@ function Home() {
   return (
     <div>
       <MainPage />
-      <input
+      <SearchInput
         type="text"
         placeholder="Search For Something"
         onChange={onInputChange}
         value={input}
         onKeyDown={onKeyDown}
       />
-      <div>
+      <RadioInputsWrapper>
         <label htmlFor="search-shows">
           Shows
           <input
@@ -74,10 +79,12 @@ function Home() {
             onChange={onRadioChange}
           />
         </label>
-      </div>
-      <button type="button" onClick={onSearch}>
-        Search
-      </button>
+      </RadioInputsWrapper>
+      <SearchButtonWrapper>
+        <button type="button" onClick={onSearch}>
+          Search
+        </button>
+      </SearchButtonWrapper>
       {renderResults()}
     </div>
   );

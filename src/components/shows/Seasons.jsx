@@ -5,11 +5,12 @@ const Seasons = ({ seasons }) => {
   return (
     <SeasonsWrapper>
       <p>
-        Seasons in total: <span>{seasons.length}</span>
+        Seasons in total:{' '}
+        <span style={{ fontWeight: 'bold' }}>{seasons.length}</span>
       </p>
       <p>
         Episodes in total:{' '}
-        <span>
+        <span style={{ fontWeight: 'bold' }}>
           {seasons.reduce((acc, season) => acc + season.episodeOrder, 0)}
         </span>
       </p>
